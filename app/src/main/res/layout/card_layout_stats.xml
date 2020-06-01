@@ -12,6 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:checkable="true"
+        app:cardElevation="4dp"
         app:layout_constraintEnd_toStartOf="@+id/cvRecovered"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,26 +24,33 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/tvConfirmedLabel"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Confirmed"
                 android:textAlignment="center"
-                android:textColor="#F44336" />
+                android:textAllCaps="true"
+                android:textColor="#F44336"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvDailyCountConfirmed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-thin"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:textColor="#EF5A5A"
+                
+                tools:text="100" />
 
             <TextView
                 android:id="@+id/tvTotalCountConfirmed"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColor="#EF5A5A"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/tvDailyIncreaseConfirmed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="12dp"
@@ -58,6 +69,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/cvConfirmed"
@@ -66,31 +78,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/tvRecoveredLabel"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Recovered"
                 android:textAlignment="center"
-                android:textColor="#F44336" />
+                android:textAllCaps="true"
+                android:textColor="#4CAF50" />
+
+            <TextView
+                android:id="@+id/tvDailyCountRecovered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="#4CAF50"
+                android:fontFamily="sans-serif-thin"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tvTotalCountRecovered"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColor="#EF5A5A"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/tvDailyIncreaseRecovered"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:paddingTop="12dp"
                 android:textAlignment="center"
-                android:textColor="#F44336"
+                android:textColor="#4CAF50"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -103,6 +119,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@android:color/white"
         app:layout_constraintEnd_toStartOf="@+id/cvDeceased"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,32 +129,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/tvActiveLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Active"
+
                 android:textAlignment="center"
-                android:textColor="#F44336" />
+                android:textAllCaps="true"
+                android:textColor="#2196F3" />
+
+            <TextView
+                android:id="@+id/tvDailyCountActive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:fontFamily="sans-serif-thin"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tvTotalCountActive"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:textAlignment="center"
-                android:textColor="#EF5A5A"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/tvDailyIncreaseActive"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:paddingTop="12dp"
                 android:textAlignment="center"
-                android:textColor="#F44336"
+                android:textColor="#2196F3"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -150,39 +171,44 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/cvActive"
-        app:layout_constraintTop_toBottomOf="@+id/cvRecovered" >
+        app:layout_constraintTop_toBottomOf="@+id/cvRecovered">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/tvDeathLabel"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Death"
                 android:textAlignment="center"
-                android:textColor="#F44336" />
+                android:textAllCaps="true"
+                android:textColor="#5C605F" />
+
+            <TextView
+                android:id="@+id/tvDailyCountDeath"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="#5C605F"
+                android:fontFamily="sans-serif-thin"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tvTotalCountDeath"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColor="#EF5A5A"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/tvDailyIncreaseDeath"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:paddingTop="12dp"
                 android:textAlignment="center"
-                android:textColor="#F44336"
+                android:textColor="#5C605F"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>

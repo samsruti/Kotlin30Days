@@ -8,18 +8,18 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.samsruti.kotlin30days.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label="Current Status"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_news"
         android:name="com.samsruti.kotlin30days.ui.news.NewsFragment"
-        android:label="@string/title_dashboard"
+        android:label="Covid News"
         tools:layout="@layout/fragment_news" />
     <fragment
         android:id="@+id/navigation_essentials"
         android:name="com.samsruti.kotlin30days.ui.essentials.EssentialsFragment"
-        android:label="fragment_essentials"
+        android:label="Nearby Essential"
         tools:layout="@layout/fragment_essentials" />
 
 </navigation>

@@ -1,5 +1,7 @@
 package com.samsruti.kotlin30days.ui.essentials
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,13 +51,16 @@ class EssentialsFragment : Fragment() {
             essentialsListAdapter = EssentialsListAdapter(essentials) { itemView, itemPosition->
                 when(itemView.id){
                     R.id.btnCall -> {
-                        Toast.makeText(activity, essentials[itemPosition].properties.phone,Toast.LENGTH_LONG).show()
+                        onClickCall(essentials[itemPosition].properties.phone)
                     }
                     R.id.btnMap -> {
-                        Toast.makeText(activity, essentials[itemPosition].geometry.toString(),Toast.LENGTH_LONG).show()
+                        onClickMap(
+                            lat = essentials[itemPosition].geometry.coordinates[0].toString(),
+                            lon = essentials[itemPosition].geometry.coordinates[1].toString()
+                        )
                     }
                     R.id.btnWebsite -> {
-                        Toast.makeText(activity, essentials[itemPosition].properties.contact,Toast.LENGTH_LONG).show()
+                        onClickWebsite(essentials[itemPosition].properties.contact)
                     }
                 }
 
@@ -82,8 +87,20 @@ class EssentialsFragment : Fragment() {
         }
     }
 
-    fun onClickCall(view: View){
+    private fun onClickCall(contactNo: String?){
+        val callIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$contactNo"))
+        startActivity(callIntent)
+    }
 
+    private fun onClickMap(lat: String?, lon: String?){
+        val geoString = "geo:$lat,$lon?z=14"
+        val callIntent = Intent(Intent.ACTION_VIEW, Uri.parse(geoString))
+        startActivity(callIntent)
+    }
+
+    private fun onClickWebsite(website: String?){
+        val callIntent = Intent(Intent.ACTION_VIEW, Uri.parse(website))
+        startActivity(callIntent)
     }
 
 }

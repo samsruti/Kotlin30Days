@@ -1,5 +1,7 @@
 package com.samsruti.kotlin30days.ui.home
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Message
 import android.view.LayoutInflater
@@ -53,7 +55,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun makeHelpLineCall() {
-
+        val contactNo = "+911123978046"
+        val callIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$contactNo"))
+        startActivity(callIntent)
     }
 
     private fun updateHomePageView(covidAllData: Covid19AllData?) {
@@ -74,9 +78,9 @@ class HomeFragment : Fragment() {
                 tvTotalCountConfirmed.text = it.totalConfirmed.toString()
                 tvTotalCountRecovered.text = it.totalRecovered.toString()
 
-                tvDailyIncreaseDeath.text = it.dailyDeceased.toString()
-                tvDailyIncreaseConfirmed.text = it.dailyConfirmed.toString()
-                tvDailyIncreaseRecovered.text = it.dailyDeceased.toString()
+                tvDailyCountDeath.text = it.dailyDeceased.toString()
+                tvDailyCountConfirmed.text = it.dailyConfirmed.toString()
+                tvDailyCountRecovered.text = it.dailyRecovered.toString()
             }
 
         }

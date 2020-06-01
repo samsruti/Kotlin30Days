@@ -30,6 +30,7 @@ class NewsFragment : Fragment() {
                 override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                     super.onPageStarted(view, url, favicon)
                     progressBar.visibility = View.VISIBLE
+                    progressBar.isIndeterminate = true
                 }
 
                 override fun onReceivedSslError(
@@ -53,7 +54,7 @@ class NewsFragment : Fragment() {
                     return true
                 }
             }
-            webView.loadUrl("https://news.google.com/topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNREZqY0hsNUVnSmxiaWdBUAE?hl=en-IN&gl=IN&ceid=IN%3Aen")
+            webView.loadUrl("https://economictimes.indiatimes.com/news/politics-and-nation/coronavirus-live-news-updates-covid19-cases-in-india-june-1/liveblog/76126954.cms")
 
         }
     }
