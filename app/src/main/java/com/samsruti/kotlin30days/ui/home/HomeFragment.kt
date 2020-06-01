@@ -1,9 +1,14 @@
+/*
+ * Copyright (c) 2020. Samsruti Dash
+ * Author: Samsuti Dash
+ *
+ */
+
 package com.samsruti.kotlin30days.ui.home
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.os.Message
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +17,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.samsruti.kotlin30days.R
 import com.samsruti.kotlin30days.entities.covid19data.Covid19AllData
+import com.samsruti.kotlin30days.extensions.formatDailyIncrease
 import com.samsruti.kotlin30days.extensions.formatToLastUpdatedOn
 import kotlinx.android.synthetic.main.card_layout_stats.*
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -65,8 +71,6 @@ class HomeFragment : Fragment() {
             val totalCountData = covidAllData.casesTimeSeries.lastOrNull()
             val activeData = covidAllData.statewise.firstOrNull()
 
-
-
             activeData?.let {
                 tvTotalCountActive.text = it.active.toString()
                 tvLastUpdatedOn.text = it.lastUpdatedTime.formatToLastUpdatedOn()
@@ -78,9 +82,9 @@ class HomeFragment : Fragment() {
                 tvTotalCountConfirmed.text = it.totalConfirmed.toString()
                 tvTotalCountRecovered.text = it.totalRecovered.toString()
 
-                tvDailyCountDeath.text = it.dailyDeceased.toString()
-                tvDailyCountConfirmed.text = it.dailyConfirmed.toString()
-                tvDailyCountRecovered.text = it.dailyRecovered.toString()
+                tvDailyCountDeath.text = it.dailyDeceased.toString().formatDailyIncrease()
+                tvDailyCountConfirmed.text = it.dailyConfirmed.toString().formatDailyIncrease()
+                tvDailyCountRecovered.text = it.dailyRecovered.toString().formatDailyIncrease()
             }
 
         }

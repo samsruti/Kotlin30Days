@@ -1,9 +1,18 @@
+/*
+ * Copyright (c) 2020. Samsruti Dash
+ * Author: Samsuti Dash
+ *
+ */
+
 package com.samsruti.kotlin30days
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.coroutines.*
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SplashActivity : AppCompatActivity() {
 

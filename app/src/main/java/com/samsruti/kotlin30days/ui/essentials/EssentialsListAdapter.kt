@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2020. Samsruti Dash
+ * Author: Samsuti Dash
+ *
+ */
+
 package com.samsruti.kotlin30days.ui.essentials
 
 import android.view.LayoutInflater

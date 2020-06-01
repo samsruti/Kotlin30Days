@@ -1,10 +1,15 @@
+/*
+ * Copyright (c) 2020. Samsruti Dash
+ * Author: Samsuti Dash
+ *
+ */
+
 package com.samsruti.kotlin30days.ui.essentials
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.samsruti.kotlin30days.entities.bigdatacloud.BigDataCloudData
 import com.samsruti.kotlin30days.entities.essential.EssentialResourcesData
 import com.samsruti.kotlin30days.entities.essential.Features
 import com.samsruti.kotlin30days.repository.CovidApiRepository
@@ -62,9 +67,10 @@ class EssentialsViewModel : ViewModel() {
     }
 
     private fun mapperHelper(currentLocation: String, allData: EssentialResourcesData): List<Features>{
-        return allData.features.filter {
+        val filteredData = allData.features.filter {
             it.properties.addr.contains(currentLocation)
         }
+        return filteredData
     }
 
 }

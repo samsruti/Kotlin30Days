@@ -1,8 +1,13 @@
+/*
+ * Copyright (c) 2020. Samsruti Dash
+ * Author: Samsuti Dash
+ *
+ */
+
 package com.samsruti.kotlin30days
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).

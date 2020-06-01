@@ -1,16 +1,25 @@
+/*
+ * Copyright (c) 2020. Samsruti Dash
+ * Author: Samsuti Dash
+ *
+ */
+
 package com.samsruti.kotlin30days.ui.news
 
 import android.graphics.Bitmap
 import android.net.http.SslError
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.*
+import android.webkit.SslErrorHandler
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import com.samsruti.kotlin30days.R
+import com.samsruti.kotlin30days.constants.CommonConstants.URL.NEWS_URL
 import kotlinx.android.synthetic.main.fragment_news.*
 
 class NewsFragment : Fragment() {
@@ -54,7 +63,7 @@ class NewsFragment : Fragment() {
                     return true
                 }
             }
-            webView.loadUrl("https://economictimes.indiatimes.com/news/politics-and-nation/coronavirus-live-news-updates-covid19-cases-in-india-june-1/liveblog/76126954.cms")
+            webView.loadUrl(NEWS_URL)
 
         }
     }

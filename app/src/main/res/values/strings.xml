@@ -1,3 +1,9 @@
+<!--
+  ~ Copyright (c) 2020. Samsruti Dash
+  ~ Author: Samsuti Dash
+  ~
+  -->
+
 <resources>
     <string name="app_name">Kotlin30Days</string>
     <string name="title_activity_home">MainActivity</string>

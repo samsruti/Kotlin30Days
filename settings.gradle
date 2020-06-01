@@ -1,2 +1,8 @@
+/*
+ * Copyright (c) 2020. Samsruti Dash
+ * Author: Samsuti Dash
+ *
+ */
+
 include ':app'
 rootProject.name = "Kotlin30Days"

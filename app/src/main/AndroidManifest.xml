@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2020. Samsruti Dash
+  ~ Author: Samsuti Dash
+  ~
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.samsruti.kotlin30days">
 

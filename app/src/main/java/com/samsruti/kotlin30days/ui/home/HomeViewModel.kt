@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2020. Samsruti Dash
+ * Author: Samsuti Dash
+ *
+ */
+
 package com.samsruti.kotlin30days.ui.home
 
 import androidx.lifecycle.LiveData
@@ -7,7 +13,6 @@ import androidx.lifecycle.viewModelScope
 import com.samsruti.kotlin30days.entities.covid19data.Covid19AllData
 import com.samsruti.kotlin30days.repository.CovidApiRepository
 import kotlinx.coroutines.launch
-import java.lang.Exception
 
 class HomeViewModel : ViewModel() {
 
