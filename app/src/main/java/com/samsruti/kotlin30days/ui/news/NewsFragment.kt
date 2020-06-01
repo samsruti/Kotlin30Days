@@ -53,7 +53,7 @@ class NewsFragment : Fragment() {
                     return true
                 }
             }
-            webView.loadUrl("https://news.google.com/search?q=covid&hl=en-IN&gl=IN&ceid=IN%3Aen")
+            webView.loadUrl("https://news.google.com/topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNREZqY0hsNUVnSmxiaWdBUAE?hl=en-IN&gl=IN&ceid=IN%3Aen")
 
         }
     }
